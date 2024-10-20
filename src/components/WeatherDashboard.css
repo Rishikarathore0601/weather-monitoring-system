@@ -9,10 +9,11 @@ body {
   color: #333; /* Dark text color for better readability */
   margin: 0;
   padding: 0;
-  height: 100vh; /* Full height for vertical centering */
+  height: 100%; /* Full height for vertical centering */
   display: flex; /* Flexbox for centering */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
+  flex-direction: column; /* Column layout for mobile */
 }
 
 body.dark-theme {
@@ -23,9 +24,9 @@ body.dark-theme {
 /* Main title */
 h1 {
   text-align: center;
-  margin-bottom: 40px; /* Space below title */
+  margin-bottom: 20px; /* Reduced space below title */
   color: #00796b; /* Teal color for the main title */
-  font-size: 2.8rem; /* Larger font size for the title */
+  font-size: 2.5rem; /* Adjusted font size for mobile */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
 }
 
@@ -37,7 +38,7 @@ body.dark-theme h1 {
 .card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Three cards in a row */
-  gap: 20px; /* Space between cards */
+  gap: 10px; /* Reduced space between cards */
   max-width: 1200px; /* Max width for desktop view */
   width: 100%; /* Full width for responsiveness */
   margin: 0 auto; /* Center the grid container */
@@ -91,7 +92,7 @@ body.dark-theme .weather-card h2 {
 }
 
 .weather-card p {
-  font-size: 1rem; /* Font size for temperature and date */
+  font-size: 0.9rem; /* Slightly smaller font size for temperature and date */
   margin: 5px 0;
   color: #555; /* Slightly lighter color for other text */
   position: relative; /* Position relative to overlay */
@@ -131,10 +132,52 @@ body.dark-theme .toggle-button {
   background-color: #555; /* Dark button color */
 }
 
+/* Alerts section */
+.alerts {
+  margin-top: 20px; /* Reduced space above alerts */
+  text-align: center; /* Center text alignment */
+}
+
+/* Summary chart styles */
+.summary-chart {
+  margin-top: 20px; /* Reduced space above chart */
+}
+
+/* Dark theme for alerts */
+body.dark-theme .alerts {
+  background-color: #333; /* Dark background */
+  color: #fff; /* Light text color */
+  border: 1px solid #444; /* Border color */
+  padding: 15px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Dark theme for summary chart */
+body.dark-theme .summary-chart {
+  background-color: #222; /* Darker background */
+  color: #fff; /* Light text color */
+  padding: 15px; /* Add padding */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+}
+
+/* Optional: Chart elements */
+body.dark-theme .summary-chart canvas {
+  background-color: #333; /* Background for the chart itself */
+  color: #fff;
+}
+
+/* Chart tooltip styles */
+body.dark-theme .summary-chart .tooltip {
+  background-color: #333; /* Dark tooltip background */
+  color: #fff; /* White text color for tooltip */
+  border: 1px solid #444; /* Dark border for tooltip */
+}
+
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2.5rem; /* Adjust title font size for smaller screens */
+    font-size: 2.2rem; /* Adjust title font size for medium screens */
   }
 
   .card-container {
@@ -145,32 +188,36 @@ body.dark-theme .toggle-button {
   }
 
   .weather-card {
-    padding: 15px; /* Less padding on smaller screens */
+    padding: 10px; /* Less padding on smaller screens */
   }
 
-  .weather-card h2 {
-    font-size: 1.4rem; /* Adjust city name font size for smaller screens */
-  }
-
-  .weather-card p {
-    font-size: 0.9rem; /* Adjust paragraph font size for smaller screens */
+  .toggle-button {
+    width: 35px; /* Smaller button width */
+    height: 35px; /* Smaller button height */
   }
 }
 
 @media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem; /* Smaller title font size for small screens */
+  }
+
   .card-container {
     grid-template-columns: 1fr; /* One card in a row on small screens */
   }
 
   .weather-card {
-    padding: 10px; /* Less padding on extra small screens */
+    padding: 8px; /* Further reduce padding on small screens */
   }
 
-  .weather-card h2 {
-    font-size: 1.2rem; /* Adjust city name font size for extra small screens */
+  .toggle-button {
+    width: 30px; /* Even smaller button width */
+    height: 30px; /* Even smaller button height */
   }
 
-  .weather-card p {
-    font-size: 0.85rem; /* Adjust paragraph font size for extra small screens */
+  .alerts,
+  .summary-chart {
+    margin-top: 10px; /* Adjust margins for small screens */
+    padding: 10px; /* Less padding for small screens */
   }
 }
