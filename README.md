@@ -28,8 +28,38 @@ A React-based weather dashboard that visualizes weather data, calculates daily s
 ## Installation
 
 To set up the project locally, follow these steps:
+Install dependencies:
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/weather-dashboard.git
-   cd weather-dashboard
+bash
+Copy code
+npm install
+Start the development server:
+
+bash
+Copy code
+npm start
+Open your browser and navigate to http://localhost:3000 to view the dashboard.
+
+Usage
+Provide Weather Data: Pass the weather data as a prop to the WeatherDashboard component. The data should be an array of objects, each containing properties like date, temperature, and condition.
+
+Example:
+
+javascript
+Copy code
+const weatherData = [
+  { date: '2023-10-01', temperature: 30, condition: 'Sunny' },
+  { date: '2023-10-01', temperature: 32, condition: 'Sunny' },
+  // More data...
+];
+
+<WeatherDashboard weatherData={weatherData} />
+View Dashboard: Once the data is provided, the dashboard will visualize the weather data and display alerts if applicable.
+
+Deployment
+You can view the live version of the Weather Dashboard here.
+https://weather-monitoring-sys.netlify.app/s
+
+Contributing
+Contributions are welcome! If you want to contribute to this project, please follow these steps:
+
