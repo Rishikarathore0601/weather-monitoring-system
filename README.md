@@ -31,13 +31,15 @@ To set up the project locally, follow these steps:
 Install dependencies:
 
 bash
-Copy code
+```
 npm install
+```
 Start the development server:
 
 bash
-Copy code
+```
 npm start
+```
 Open your browser and navigate to http://localhost:3000 to view the dashboard.
 
 Usage
@@ -46,13 +48,13 @@ Provide Weather Data: Pass the weather data as a prop to the WeatherDashboard co
 Example:
 
 javascript
-Copy code
+```
 const weatherData = [
   { date: '2023-10-01', temperature: 30, condition: 'Sunny' },
   { date: '2023-10-01', temperature: 32, condition: 'Sunny' },
   // More data...
 ];
-
+```
 <WeatherDashboard weatherData={weatherData} />
 View Dashboard: Once the data is provided, the dashboard will visualize the weather data and display alerts if applicable.
 
